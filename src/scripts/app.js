@@ -2,6 +2,8 @@ import Backbone from 'backbone'
 import Header from './views/header'
 import DetailView from './views/detailView.js'
 import ListView from './views/listView.js'
+import ReactDOM from 'react-dom'
+import React from 'react'
 
 const app = function() {
 //MODEL
