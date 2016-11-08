@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Counter = React.createClass({
 	date: function() {
 		var currentTime = new Date()
@@ -14,7 +13,7 @@ const Counter = React.createClass({
 	},
 	_goBack: function() {
 		this.setState({
-			year: this.state.year - 1
+			year: this.state.year - 1,
 		})
 	},
 	_goHere: function() {
@@ -35,39 +34,32 @@ const Counter = React.createClass({
 	_selected: function(e) {
 		var myInterval = ''
 		if (e.target.value == 'go_back') {
-			if (myInterval) { window.clearInterval(myInterval) }
-			myInterval = setInterval(this._goBack, 500)	
+			this._goBack()
 		}
 		else if (e.target.value == 'stop') {
-			if (myInterval) { window.clearInterval(myInterval) }
 			this._goHere()
 		}
 		else if (e.target.value == 'go_forward') {
-			clearInterval(myInterval)
-			myInterval = setInterval(this._goForward, 500)	
+			this._goForward()
 		}
 		else if (e.target.value == 'go_home') { 
-			if (myInterval) window.clearInterval(myInterval)
 			this._goHome()
 		}
 	},
 	render: function() {
-
 		return (
 			<div>
 				<div>
 					<span>{this.state.year}</span>
 				</div>
-
 				<div className="radio-container">
-					<input type="radio" name="controls" value="go_back" onClick={this._selected} />
-					<input type="radio" name="controls" value="stop" onClick={this._selected} />
-					<input type="radio" name="controls" value="go_forward" onClick={this._selected} />
-					<input type="radio" name="controls" value="go_home" onClick={this._selected} />
+					<label for="go_back">Go Back</label>		<input type="radio" name="controls" id="go_back" 	value="go_back" 	onClick={this._selected} />
+					<label for="stop">Stop</label>				<input type="radio" name="controls" id="stop" 		value="stop" 		onClick={this._selected} />
+					<label for="go_forward">Go Forward</label>	<input type="radio" name="controls" id="go_forward"	value="go_forward" 	onClick={this._selected} />
+					<label for="go_home">Go Home</label>		<input type="radio" name="controls" id="go_home" 	value="go_home" 	onClick={this._selected} />
 				</div>
 			</div>
 		)
 	}
 })
-
 export default Counter
