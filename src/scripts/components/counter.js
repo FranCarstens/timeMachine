@@ -15,18 +15,17 @@ const Counter = React.createClass({
 		})
 	},
 	
-	_runMachine: function() {
-		if (this.state.timeZone === 'past') {
-			clearInterval(this.state.intervalId)
-			var intervalId = setInterval(this._backYear, 500)
-			this.setState({intervalId: intervalId});
-		}
-		else if (this.state.timeZone === 'future') {
-			clearInterval(this.state.intervalId)
-			var intervalId = setInterval(this._forwardYear, 500)
-			this.setState({intervalId: intervalId});
-		}
-	},
+	// _runMachine: function() {
+	// 	if (this.state.timeZone === 'past') {
+	// 		clearInterval(this.state.intervalId)
+	// 		var intervalId = setInterval(this._backYear, 500)
+	// 		this.setState({intervalId: intervalId});
+	// 	}
+	// 	else if (this.state.timeZone === 'future') {
+	// 		clearInterval(this.state.intervalId)
+			
+	// 	}
+	// },
 
 	_backYear: function() {
 		this.setState({
@@ -45,15 +44,18 @@ const Counter = React.createClass({
 			timeZone: 'past',
 			buttonPos: '0%',
 		})
-		this._runMachine()
+		clearInterval(this.state.intervalId)
+		var intervalId = setInterval(this._backYear, 500)
+		this.setState({intervalId: intervalId});
 	},
 	_goForward: function() {
 		this.setState({
 			timeZone: 'future',
 			buttonPos: '50%',
 		})
-		console.log('Checking State', this.state.timeZone)
-		this._runMachine()
+		clearInterval(this.state.intervalId)
+		var intervalId = setInterval(this._forwardYear, 500)
+		this.setState({intervalId: intervalId});
 	},
 	_goHere: function() {
 		this.setState({
@@ -76,6 +78,7 @@ const Counter = React.createClass({
 		var buttonPos = {
 			left: this.state.buttonPos
 		}
+		console.log('counter.state',this.state)
 		return (
 			<div className="machine-counter">
 				<div className="counter">
@@ -83,8 +86,8 @@ const Counter = React.createClass({
 				</div>
 				<div className={'radio-container ' + containerClass}>
 					<label className="go_back" 		htmlFor="go_back">Past			<div></div></label>		<input type="radio" name="controls" id="go_back" 		value="go_back" 	onClick={this._goBack} />
-					<label className="stop" 		htmlFor="stop">Stop				<div></div></label>			<input type="radio" name="controls" id="stop" 			value="stop" 		onClick={this._goHere} />
-					<label className="go_forward"	htmlFor="go_forward">Future		<div></div></label>	<input type="radio" name="controls" id="go_forward"		value="go_forward" 	onClick={this._goForward} />
+					<label className="stop" 		htmlFor="stop">Stop				<div></div></label>		<input type="radio" name="controls" id="stop" 			value="stop" 		onClick={this._goHere} />
+					<label className="go_forward"	htmlFor="go_forward">Future		<div></div></label>		<input type="radio" name="controls" id="go_forward"		value="go_forward" 	onClick={this._goForward} />
 					<label className="go_home" 		htmlFor="go_home">Home			<div></div></label>		<input type="radio" name="controls" id="go_home" 		value="go_home" 	onClick={this._goHome} />
 					<span className={'toggle ' + containerClass} style={buttonPos}><div></div></span>
 				</div>

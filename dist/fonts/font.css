@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'LCDMono2';
+  src: url('LCDM2U__.eot'); /* IE9 Compat Modes */
+  src: url('LCDM2U__.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('LCDM2U__.woff') format('woff'), /* Modern Browsers */
+       url('LCDM2U__.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('LCDM2U__.svg#a0c4828d1bee60fcc2f8f25204699f11') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

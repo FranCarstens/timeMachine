@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Geostar|Exo+2');
+@import url('../fonts/font.css')
 
 a, a:link, a:hover, a:visited {
 	text-decoration: none;
@@ -8,7 +9,7 @@ a, a:link, a:hover, a:visited {
 
 .counter span {
 	font-family: $title;
-	font-size: 5rem;
+	font-size: 7rem;
 }
 .radio-container label {
 	font-family: $body;
