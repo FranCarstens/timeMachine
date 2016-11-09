@@ -10,7 +10,8 @@ const Counter = React.createClass({
 		return ({
 			year: (this.date()),
 			timeZone: 'stop', // past, stop, future, present
-			intervalId: ''
+			intervalId: '',
+			buttonPos: '25%'
 		})
 	},
 	
@@ -81,11 +82,11 @@ const Counter = React.createClass({
 					<span>{this.state.year}</span>
 				</div>
 				<div className={'radio-container ' + containerClass}>
-					<label htmlFor="go_back">Past</label>		<input type="radio" name="controls" id="go_back" 	value="go_back" 	onClick={this._goBack} />
-					<label htmlFor="stop">Stop</label>				<input type="radio" name="controls" id="stop" 		value="stop" 		onClick={this._goHere} />
-					<label htmlFor="go_forward">Future</label>	<input type="radio" name="controls" id="go_forward"	value="go_forward" 	onClick={this._goForward} />
-					<label htmlFor="go_home">Home</label>		<input type="radio" name="controls" id="go_home" 	value="go_home" 	onClick={this._goHome} />
-					<span className="toggle" style={buttonPos}><div></div></span>
+					<label className="go_back" 		htmlFor="go_back">Past			<div></div></label>		<input type="radio" name="controls" id="go_back" 		value="go_back" 	onClick={this._goBack} />
+					<label className="stop" 		htmlFor="stop">Stop				<div></div></label>			<input type="radio" name="controls" id="stop" 			value="stop" 		onClick={this._goHere} />
+					<label className="go_forward"	htmlFor="go_forward">Future		<div></div></label>	<input type="radio" name="controls" id="go_forward"		value="go_forward" 	onClick={this._goForward} />
+					<label className="go_home" 		htmlFor="go_home">Home			<div></div></label>		<input type="radio" name="controls" id="go_home" 		value="go_home" 	onClick={this._goHome} />
+					<span className={'toggle ' + containerClass} style={buttonPos}><div></div></span>
 				</div>
 			</div>
 		)
