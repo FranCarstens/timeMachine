@@ -21,6 +21,18 @@
 			flex: 1;
 			align-items: center;
 			justify-content: center;
+			span {
+				width: 100%;
+				text-align: center;
+				padding: 1rem;
+				margin-bottom: 4rem;
+				border-radius: 0.5rem;
+				background-image: linear-gradient(to right, rgba(15, 35, 15, 1) 0%, rgba(5, 5, 5, 1) 60%, rgba(15, 35, 15, 1) 100%);
+				border-top: 2px solid #222;
+				border-right: 2px solid #444;
+				border-bottom: 2px solid #666;
+				border-left: 2px solid #444;
+			}
 		}
 		.title {
 			display: flex;

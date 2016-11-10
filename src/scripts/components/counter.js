@@ -74,8 +74,8 @@ const Counter = React.createClass({
 			timeZone: 'present',
 			buttonPos: '75%',
 		})
-		if ( this.state.year == (this.date()) ||  this.state.year == (this.date()) ) {
-			this.goHere()
+		if ( this.state.year == (this.date()) -1 || this.state.year == (this.date()) + 1 ) {
+			this._goHere()
 		}
 		else if (this.state.year > (this.date())) {
 			this.setState({
