@@ -75,9 +75,6 @@ const Counter = React.createClass({
 			buttonPos: '75%',
 		})
 		if ( this.state.year == (this.date()) -1 || this.state.year == (this.date()) + 1 ) {
-			this.setState({
-				year: (this.date())
-			})
 			this._goHere()
 		}
 		else if (this.state.year > (this.date())) {
